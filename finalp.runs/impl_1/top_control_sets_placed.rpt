@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Fri Dec  6 17:32:57 2024
+| Date         : Fri Dec  6 18:06:19 2024
 | Host         : JJnvn running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               8 |            4 |
-| No           | No                    | Yes                    |              72 |           18 |
+| No           | No                    | Yes                    |              72 |           22 |
 | No           | Yes                   | No                     |              48 |           12 |
-| Yes          | No                    | No                     |              25 |           12 |
-| Yes          | No                    | Yes                    |             106 |           27 |
+| Yes          | No                    | No                     |              25 |           14 |
+| Yes          | No                    | Yes                    |             106 |           30 |
 | Yes          | Yes                   | No                     |               1 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,32 +73,32 @@ Table of Contents
 +----------------+------------------------------+----------------------------------+------------------+----------------+--------------+
 |  Clock Signal  |         Enable Signal        |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+------------------------------+----------------------------------+------------------+----------------+--------------+
-|  baud_BUFG     | uart_rx_inst/data_out[1]     |                                  |                1 |              1 |         1.00 |
-|  baud_BUFG     | uart_rx_inst/data_out[6]     |                                  |                1 |              1 |         1.00 |
-|  baud_BUFG     | uart_rx_inst/data_out[3]     |                                  |                1 |              1 |         1.00 |
 |  baud_BUFG     | uart_rx_inst/data_out[2]     |                                  |                1 |              1 |         1.00 |
-|  baud_BUFG     | uart_rx_inst/data_out[5]     |                                  |                1 |              1 |         1.00 |
+|  baud_BUFG     | uart_rx_inst/data_out[1]     |                                  |                1 |              1 |         1.00 |
 |  baud_BUFG     | uart_rx_inst/data_out[0]     |                                  |                1 |              1 |         1.00 |
+|  baud_BUFG     | uart_rx_inst/data_out[3]     |                                  |                1 |              1 |         1.00 |
+|  baud_BUFG     | uart_rx_inst/data_out[6]     |                                  |                1 |              1 |         1.00 |
 |  baud_BUFG     | uart_rx_inst/data_out[4]     |                                  |                1 |              1 |         1.00 |
+|  baud_BUFG     | uart_rx_inst/data_out[5]     |                                  |                1 |              1 |         1.00 |
 |  baud_BUFG     | uart_tx_inst/bit_out_i_2_n_0 | uart_tx_inst/bit_out0            |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG |                              |                                  |                1 |              1 |         1.00 |
 |  vga/CLK       |                              |                                  |                1 |              2 |         2.00 |
 |  clk_IBUF_BUFG | vga/CLK                      |                                  |                2 |              4 |         2.00 |
 |  baud_BUFG     |                              |                                  |                2 |              5 |         2.50 |
-|  clk_IBUF_BUFG | tsg/db_down/E[0]             | reset_IBUF                       |                1 |              5 |         5.00 |
-|  baud_BUFG     | uart_rx_inst/E[0]            |                                  |                1 |              7 |         7.00 |
-|  baud_BUFG     | uart_tx_inst/temp[6]_i_1_n_0 |                                  |                2 |              7 |         3.50 |
-|  clk_IBUF_BUFG | tsg/db_left/E[0]             | reset_IBUF                       |                2 |              7 |         3.50 |
-|  baud_BUFG     |                              | uart_rx_inst/count[7]_i_1_n_0    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | tsg/db_down/E[0]             | reset_IBUF                       |                2 |              5 |         2.50 |
+|  baud_BUFG     | uart_tx_inst/temp[6]_i_1_n_0 |                                  |                3 |              7 |         2.33 |
+|  baud_BUFG     | uart_rx_inst/E[0]            |                                  |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | tsg/db_left/E[0]             | reset_IBUF                       |                3 |              7 |         2.33 |
 |  baud_BUFG     |                              | uart_tx_inst/count[7]_i_1__0_n_0 |                2 |              8 |         4.00 |
-|  vga/CLK       |                              | reset_IBUF                       |                2 |             10 |         5.00 |
+|  baud_BUFG     |                              | uart_rx_inst/count[7]_i_1_n_0    |                2 |              8 |         4.00 |
+|  vga/CLK       |                              | reset_IBUF                       |                4 |             10 |         2.50 |
 |  vga/CLK       | vga/v_count_next_1           | reset_IBUF                       |                3 |             10 |         3.33 |
 |  clk_IBUF_BUFG | tsg/db_up/q_next             | reset_IBUF                       |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG | tsg/db_down/q_next           | reset_IBUF                       |                5 |             21 |         4.20 |
-|  clk_IBUF_BUFG | tsg/db_left/q_next_0         | reset_IBUF                       |                5 |             21 |         4.20 |
+|  clk_IBUF_BUFG | tsg/db_left/q_next_0         | reset_IBUF                       |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG | tsg/db_right/q_next          | reset_IBUF                       |                5 |             21 |         4.20 |
 |  clk_IBUF_BUFG |                              | baudrate_gen_inst/clear          |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG |                              | reset_IBUF                       |               16 |             62 |         3.88 |
+|  clk_IBUF_BUFG |                              | reset_IBUF                       |               18 |             62 |         3.44 |
 +----------------+------------------------------+----------------------------------+------------------+----------------+--------------+
 
 
