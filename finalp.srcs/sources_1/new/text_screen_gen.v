@@ -59,6 +59,7 @@ module text_screen_gen(
     // instantiate dual-port video RAM (2^12-by-7)
     dual_port_ram dp_ram(.clk(clk), .we(we), .addr_a(addr_w), .addr_b(addr_r),
                          .din_a(din), .dout_a(), .dout_b(dout));
+    singlePulser singlePulser_inst(set_single,set,clk);
     
     // registers
     always @(posedge clk or posedge reset)
@@ -69,7 +70,16 @@ module text_screen_gen(
             pix_x2_reg <= 0;
             pix_y1_reg <= 0;
             pix_y2_reg <= 0;
-        end    
+        end else if(set_single) begin
+            if(sw == 7'h7F) begin
+                if(cur_x_reg > 0) cur_x_reg <= cur_x_reg - 1;
+            end else if(cur_x_reg < 70)
+                cur_x_reg <= cur_x_reg + 1;
+            else begin
+                cur_x_reg <= 0;
+                cur_y_reg <= cur_y_reg + 1;
+            end
+        end   
         else begin
             cur_x_reg <= cur_x_next;
             cur_y_reg <= cur_y_next;
@@ -106,8 +116,8 @@ module text_screen_gen(
     
     // object signals
     // green over black and reversed video for cursor
-    assign text_rgb = (ascii_bit) ? 12'h0F0 : 12'h000;
-    assign text_rev_rgb = (ascii_bit) ? 12'h000 : 12'h0F0;
+    assign text_rgb = (ascii_bit) ? 12'h000 : 12'hFCC;
+    assign text_rev_rgb = (ascii_bit) ? 12'hFCC : 12'h000;
     // use delayed coordinates for comparison
     assign cursor_on = (pix_y2_reg[8:4] == cur_y_reg) &&
                        (pix_x2_reg[9:3] == cur_x_reg);
