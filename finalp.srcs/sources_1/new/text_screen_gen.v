@@ -73,6 +73,9 @@ module text_screen_gen(
         end else if(set_single) begin
             if(sw == 7'h7F) begin
                 if(cur_x_reg > 0) cur_x_reg <= cur_x_reg - 1;
+            end else if(sw == 7'h0D) begin
+                cur_x_reg <= 0;
+                cur_y_reg <= cur_y_reg+1;
             end else if(cur_x_reg < 70)
                 cur_x_reg <= cur_x_reg + 1;
             else begin

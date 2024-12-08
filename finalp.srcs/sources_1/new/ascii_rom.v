@@ -34,6 +34,23 @@ module ascii_rom(
 		
 	always @*
 		case(addr_reg)
+		    // enter
+            11'h0D0: data = 8'b00000000;
+            11'h0D1: data = 8'b00000000;
+            11'h0D2: data = 8'b00000000;
+            11'h0D3: data = 8'b00000000;
+            11'h0D4: data = 8'b00000000;
+            11'h0D5: data = 8'b00000000;
+            11'h0D6: data = 8'b00000000;
+            11'h0D7: data = 8'b00000000;
+            11'h0D8: data = 8'b00000000;
+            11'h0D9: data = 8'b00000000;
+            11'h0DA: data = 8'b00000000;
+            11'h0DB: data = 8'b00000000;
+            11'h0DC: data = 8'b00000000;
+            11'h0DD: data = 8'b00000000;
+            11'h0DE: data = 8'b00000000;
+            11'h0DF: data = 8'b00000000;
 			// Begin non-printable ASCII characters (00 - 1f)
 			
 			// code x00 (nul) null byte, which is the all-zero pattern

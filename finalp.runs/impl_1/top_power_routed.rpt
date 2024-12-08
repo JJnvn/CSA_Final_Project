@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Fri Dec  6 19:26:36 2024
+| Date             : Fri Dec  6 19:38:51 2024
 | Host             : JJnvn running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -53,14 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |     1043 |       --- |             --- |
-|   LUT as Logic |     0.003 |      545 |     20800 |            2.62 |
+| Slice Logic    |     0.004 |     1051 |       --- |             --- |
+|   LUT as Logic |     0.003 |      550 |     20800 |            2.64 |
 |   CARRY4       |    <0.001 |       36 |      8150 |            0.44 |
 |   Register     |    <0.001 |      288 |     41600 |            0.69 |
-|   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
 |   Others       |     0.000 |       27 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.003 |      895 |       --- |             --- |
+| Signals        |     0.004 |      904 |       --- |             --- |
 | Block RAM      |     0.004 |        1 |        50 |            2.00 |
 | I/O            |     0.003 |       32 |       106 |           30.19 |
 | Static Power   |     0.072 |          |           |                 |
